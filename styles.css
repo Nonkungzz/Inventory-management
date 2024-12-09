@@ -1,0 +1,167 @@
+/* public/styles.css */
+
+/* กำหนดสีหลักและสีรอง */
+:root {
+    --primary-color: #4A90E2; /* ฟ้า */
+    --secondary-color: #50E3C2; /* เขียว */
+    --background-color: #f4f7fa; /* สีพื้นหลัง */
+    --card-background: #ffffff; /* สีพื้นหลังของการ์ด */
+    --text-color: #333333; /* สีข้อความ */
+    --border-color: #dddddd; /* สีขอบ */
+    --button-hover-opacity: 0.85; /* ความโปร่งใสสำหรับปุ่มเมื่อ hover */
+}
+
+/* การตั้งค่าพื้นฐานสำหรับทุกองค์ประกอบ */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+/* ปรับ margin ของ container ให้มีระยะห่างมากขึ้น */
+.container {
+    margin-top: 50px;
+    max-width: 1200px;
+}
+
+/* การ์ด */
+.card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ปรับการจัดวางปุ่มในการ์ด */
+.card .btn {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* ปุ่ม */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #357ABD;
+    border-color: #357ABD;
+    opacity: var(--button-hover-opacity);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-secondary:hover {
+    background-color: #38B6A3;
+    border-color: #38B6A3;
+    opacity: var(--button-hover-opacity);
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    opacity: var(--button-hover-opacity);
+}
+
+/* ตาราง */
+.table {
+    background-color: var(--card-background);
+    border-radius: 10px;
+}
+
+.table th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid var(--border-color);
+}
+
+/* ฟอร์ม */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+/* ปุ่มลบและแก้ไข */
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    opacity: var(--button-hover-opacity);
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+    opacity: var(--button-hover-opacity);
+}
+
+/* แสดงข้อความแจ้งเตือน */
+.alert {
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 10px;
+}

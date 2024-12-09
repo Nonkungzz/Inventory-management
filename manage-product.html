@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เช็คสินค้าในสต็อก</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-5">เช็คสินค้าในสต็อก</h1>
+
+        <!-- ฟอร์มค้นหาสินค้า -->
+        <div class="mb-4">
+            <label for="search" class="form-label">ค้นหาสินค้า</label>
+            <input type="text" class="form-control" id="search" placeholder="ค้นหาจากชื่อสินค้า">
+        </div>
+
+        <!-- ปุ่มย้อนกลับไปหน้า Home -->
+        <div class="text-center mt-4">
+            <a href="home.html" class="btn btn-secondary">ย้อนกลับไปหน้า Home</a>
+        </div>
+
+        <!-- ตารางแสดงรายการสินค้า -->
+        <div class="card mt-4">
+            <div class="card-header">รายการสินค้า</div>
+            <div class="card-body">
+                <table class="table table-striped table-bordered" id="productsTable">
+                    <thead>
+                        <tr>
+                            <th>ชื่อสินค้า</th>
+                            <th>จำนวน</th>
+                            <th>ราคา</th>
+                            <th>การกระทำ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- ข้อมูลสินค้าจะแสดงที่นี่โดย JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal สำหรับแก้ไขสินค้า -->
+    <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editProductModalLabel">แก้ไขสินค้า</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editProductForm">
+                <input type="hidden" id="edit-id">
+                <div class="mb-3">
+                    <label for="edit-name" class="form-label">ชื่อสินค้า</label>
+                    <input type="text" class="form-control" id="edit-name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="edit-quantity" class="form-label">จำนวน</label>
+                    <input type="number" class="form-control" id="edit-quantity" required>
+                </div>
+                <div class="mb-3">
+                    <label for="edit-price" class="form-label">ราคา</label>
+                    <input type="number" class="form-control" id="edit-price" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">บันทึกการแก้ไข</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal สำหรับแจ้งเตือนเพิ่มเติม (optional) -->
+    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="notificationModalLabel">แจ้งเตือน</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- ข้อความแจ้งเตือนจะถูกแสดงที่นี่ -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
